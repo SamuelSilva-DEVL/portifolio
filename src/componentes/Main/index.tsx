@@ -188,7 +188,7 @@ export function Main(){
           <CardServicos 
             logo={<BsCode />} 
             title="Back End" 
-            subTitle="Podemos dizer que tudo o que um usuário vê, interage ou clica é fruto de um trabalho de um desenvolvedor front end."
+            subTitle="Podemos dizer que tudo que está por tras da tela, fazendo que o usuario possa armazenar dados é fruto de um trabalho de um desenvolvedor back end."
             imagem={LogoBack}
           />
         </ContainerServicos>

@@ -95,7 +95,7 @@ export const Footer = styled.footer`
   display: flex;
   align-items: center;
   justify-content:space-around ;
-  background-color: ${(props) => props.theme.colors.gndiGray};
+  background-color: #171923;
   color: #fff;
 `
 

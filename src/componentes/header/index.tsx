@@ -1,22 +1,17 @@
-import { AncoraContato, HeaderBox, HeaderContainer, MenuHeader, MenuHeaderContainer, NavContainer } from "./styles";
+import { AncoraContato, HeaderContainer, MenuHeader, MenuHeaderContainer, NavContainer } from "./styles";
 import {FaWhatsapp} from 'react-icons/fa'
 
 export function Header(){
   return(
-    <HeaderBox>
       <HeaderContainer>
-        <MenuHeaderContainer>
-          <MenuHeader>
+        {/* <MenuHeaderContainer> */}
+          {/* <MenuHeader> */}
+            <h1 style={{color: '#fff'}}>Porti<span style={{color: 'red'}}>folio</span></h1>
             <NavContainer>
               <ul>
                 <li>
-                  <a href="#">
-                    Portifólio
-                  </a>
-                </li>
-                <li>
-                  <a href="#sobre">
-                    Sobre Mim
+                  <a href="#servicos">
+                    Serviços
                   </a>
                 </li>
                 <li>
@@ -31,12 +26,11 @@ export function Header(){
                 </li>
               </ul>
             </NavContainer>
-            <AncoraContato>
+            <AncoraContato href="https://wa.me/5588996975008" target="_blank">
               Contato <FaWhatsapp />
             </AncoraContato>
-          </MenuHeader>
-        </MenuHeaderContainer>
+          {/* </MenuHeader> */}
+        {/* </MenuHeaderContainer> */}
       </HeaderContainer>
-    </HeaderBox>  
   )
 }

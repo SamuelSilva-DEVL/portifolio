@@ -14,15 +14,15 @@ export const Section = styled.div<SectionProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.theme.colors.gndiGray};
+  background-color: #0E0E0E;
   position: relative;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  img{
+  /* img{
     width: 80px;
     height: 80px;
-  }
+  } */
 `
 
 export const ContainerImage = styled.div<ImageProps>`
@@ -31,6 +31,7 @@ export const ContainerImage = styled.div<ImageProps>`
   background-image: url(${(props) => props.imagem});
   background-repeat: no-repeat;
   background-size: cover; 
+  /* mix-blend-mode: multiply; */
 `
 
 export const TitleContainer = styled.div`

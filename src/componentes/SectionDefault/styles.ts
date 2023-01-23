@@ -16,8 +16,6 @@ export const Section = styled.section<SectionProps>`
   justify-content: center;
   align-items: center;
   position: relative;
-
-  border-top: 5px solid ${(props) => props.borderColor};
 `
 
 export const Title = styled.p`
@@ -25,7 +23,7 @@ export const Title = styled.p`
   top: 55px;
   font-size: 40px;
   font-weight: bold;
-  color: ${(props) => props.theme.colors.primary};
+  color: rgb(182, 182, 182);
 `
 
 export const SectionContent = styled.div`

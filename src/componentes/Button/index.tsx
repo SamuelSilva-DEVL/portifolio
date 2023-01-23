@@ -4,7 +4,7 @@ import { Button } from "./styles";
 
 interface ButtonProps{
   title: string,
-  onClick?: any,
+  onClick?: () => void,
   logo?: ReactNode,
   background?: string,
 }

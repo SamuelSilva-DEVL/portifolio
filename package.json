@@ -1,12 +1,12 @@
 {
-  "name": "telalogin",
+  "name": "portifolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "craco start",
+    "start": "start",
     "build": "CI= npm run build",
-    "test": "craco test",
+    "test": "test",
     "eject": "react-scripts eject"
   },
   "dependencies": {

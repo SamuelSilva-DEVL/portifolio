@@ -10,11 +10,9 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.9",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.5",
-    "@react-pdf/renderer": "^3.0.2",
     "aos": "^2.3.4",
     "axios": "^1.2.2",
     "framer-motion": "^8.5.2",

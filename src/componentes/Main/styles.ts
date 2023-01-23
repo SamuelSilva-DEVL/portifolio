@@ -16,7 +16,11 @@ export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: black;
+  background-color: #171923;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
 `
 export const Container = styled.div`
   width: 500px;
@@ -38,6 +42,11 @@ export const ContainerImage = styled.div<ImageProps>`
   background-image: url(${(props) => props.image});
   background-repeat: no-repeat;
   background-size: cover; 
+`
+export const ImagemProfile = styled.img`
+  width: 350px;
+  height: 450px;
+  margin: 0 auto;
 `
 
 export const Buttons = styled.div`
@@ -98,4 +107,25 @@ export const Footer = styled.footer`
   justify-content:space-around ;
   background-color: ${(props) => props.theme.colors.gndiGray};
   color: #fff;
+`
+
+export const SectionContainer = styled.div`
+  width: 100%;
+  min-height: 729px;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px;
+  background-color: #0E0E0E;
+  border-radius: 60px;
+`
+
+export const ContainerServicos = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 `

@@ -3,6 +3,7 @@ import { ButtonAction } from "../Button";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Curriculo from '../../assets/CV Samuel Silva.pdf'
+import {BsCode} from 'react-icons/bs'
 import Perfil from '../../assets/perfil.png'
 import LogoReact from '../../assets/react.svg'
 import LogoJs from '../../assets/javascript.png'
@@ -10,17 +11,21 @@ import LogoHtml from '../../assets/html.png'
 import LogoC from '../../assets/csharp.png'
 import LogoTypeScript from '../../assets/typescript.png'
 import LogoCss from '../../assets/css3.png'
+import Profile from '../../assets/profile.png'
 import { github } from "../../services/github";
 import { Buttons, 
   Container, 
   ContainerAbout, 
   ContainerImage, 
   ContainerProjetos, 
+  ContainerServicos, 
   Footer, 
   Habilidades, 
   HomeContainer, 
   Icon, 
+  ImagemProfile, 
   RedesSociais, 
+  SectionContainer, 
   Title } 
 from "./styles"
 import {AiOutlineCloudDownload, 
@@ -33,6 +38,12 @@ import { useEffect, useState } from "react";
 import { SectionDefault } from "../SectionDefault";
 import { CardHabilidade } from "../CardHabilidades";
 import { CardProject } from "../CardProjetos";
+import { FaLeaf } from "react-icons/fa";
+import { BasicModal } from "../Modal";
+import { CardServicos } from "../CardServiços";
+import './styleImage.css'
+import LogoFront from '../../assets/frontEnd.png'
+import LogoBack from '../../assets/backEnd.png'
 
 const habilidades = [
   {
@@ -71,6 +82,7 @@ interface ApiProps {
 export function Main(){
   const {colors} = useTheme()
   const [projects, setProjects] = useState<ApiProps[]>([])
+  const [openModal, setOpenModal] = useState(false)
   
   useEffect(() => {
     github.get('/repos')
@@ -100,6 +112,14 @@ export function Main(){
       })
     })
   }
+
+  const openModalSet = () => {
+    if(openModal){
+     setOpenModal(false) 
+    }else{
+     setOpenModal(true)
+    }
+  }
   
   return(
     <>
@@ -109,9 +129,17 @@ export function Main(){
           <Title color="red" size="50px">Olá, eu sou Samuel Silva</Title>
           <Title color={colors.gndiGray} size='24px'>Desenvolvedor Web</Title>
           <Buttons>
-            <ButtonAction title="Curriculo" logo={<AiOutlineCloudDownload/>} onClick={downloadPdf}/>
-            <ButtonAction title="Contate-Me" logo={<AiOutlineMail/>}/>
-            {/* <a href="mailto: samuelmec1@gmail.com">aiaiai</a> */}
+            <BasicModal />
+            <a 
+              download href={Curriculo} 
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+                textDecoration: 'none',
+                color: '#fff'
+              }}
+            >Baixar CV<AiOutlineCloudDownload/></a>
           </Buttons>
           <RedesSociais>
             <Icon href="https://www.linkedin.com/in/samuel-silva-9449ab211/" target="_blank">
@@ -126,17 +154,53 @@ export function Main(){
           </RedesSociais>
         </Container>
         <Container data-aos="fade-left">
-          <ContainerImage image={Perfil}/>
+          <div className="home__img">
+                        <svg className="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+
+                                <image className="home__blob-img" x="12" y="18" xlinkHref={Profile} />
+                            </g>
+                        </svg>
+          </div>
         </Container>  
       </HomeContainer>
 
-      <SectionDefault title="Sobre mim" id="sobre" borderColor={colors.red}>
+      <SectionContainer id="servicos">
+        <Title size="40px" color="rgb(182, 182, 182)" style={{fontWeight: 'bold'}}>Serviços</Title>
+        <ContainerServicos data-aos="fade-left">
+          <CardServicos   
+            logo={<BsCode />} 
+            title="Front End" 
+            subTitle="Podemos dizer que tudo o que um usuário vê, interage ou clica é fruto de um trabalho de um desenvolvedor front end."
+            imagem={LogoFront}
+          />
+          <CardServicos 
+            logo={<BsCode />} 
+            title="Back End" 
+            subTitle="Podemos dizer que tudo o que um usuário vê, interage ou clica é fruto de um trabalho de um desenvolvedor front end."
+            imagem={LogoBack}
+          />
+        </ContainerServicos>
+      </SectionContainer>
+ 
+     {/* <SectionDefault title="Sobre mim" id="sobre" background={'#171923'}>
         <ContainerAbout data-aos="fade-right">
-          <Title size="30px">Me chamo Samuel Silva, graduado em Egenharia de Software, apaixonado por tecnologia.</Title>
+          <Title size="30px" color="#ffff">Me chamo Samuel Silva, formando em Engenharia de Software na UFC, atualmente no ultimo período. Possuo 2 anos de experiências em desenvolvimento. Profissional comprometido com o trabalho, dinâmica, proativo e organizado. Gosto de desafios e estou em busca de novos aprendizados e oportunidades de me desenvolver. Experiência com desenvolvimento back end em C#, .NET. Experiência com desenvolvimento front end em React, TypeScript, JavaScript. Experiência com SQLSever e MySQL. Conhecimentos em desenvolvimento em Java, Spring boot. Possuo nível de Inglês básico</Title>
         </ContainerAbout>
-      </SectionDefault>
+      </SectionDefault> */}
 
-      <SectionDefault title="Habilidades" id="habilidades" background="black" borderColor={colors.red}>
+      <SectionDefault title="Habilidades" id="habilidades"  background="#171923" borderColor={colors.red}>
         <Habilidades>
           {habilidades.map((habilidade) => (
           <CardHabilidade
@@ -148,7 +212,8 @@ export function Main(){
         </Habilidades>
       </SectionDefault>
 
-      <SectionDefault title="Projetos" id="projetos" borderColor={colors.red}>
+      <SectionContainer id="projetos">
+      <Title size="40px" color="rgb(182, 182, 182)" style={{fontWeight: 'bold'}}>Projetos</Title>
         <ContainerProjetos>
             {projects?.map((project) => (
               <CardProject 
@@ -159,7 +224,7 @@ export function Main(){
               />
             ))}
         </ContainerProjetos>
-      </SectionDefault>
-      </>
+      </SectionContainer>
+    </>
   )
 }

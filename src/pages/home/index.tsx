@@ -110,7 +110,7 @@ export function HomePage(){
       <Header />
       <Main />
       <Footer>
-        <Title size="20px">Copyright@ Samuel Silva 2023</Title>
+        <Title size="20px">Copyright Samuel Silva 2023</Title>
       </Footer>
     </Wrapper>
   )

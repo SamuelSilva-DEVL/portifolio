@@ -24,7 +24,7 @@ export function BasicModal() {
 
   return (
     <div>
-      <ButtonAction title="Um pouco sobre mim" onClick={handleOpen}>Open modal</ButtonAction>
+      <ButtonAction title="Um pouco sobre mim" onClick={handleOpen} />
       <Modal
         open={open}
         onClose={handleClose}

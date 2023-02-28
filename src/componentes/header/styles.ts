@@ -8,23 +8,26 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-around;
-`
+  position: fixed;
 
-export const MenuHeaderContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 3px 3px rgb(0 0 0 25%);
-
-  @media (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    padding: 0px 8%;
+  .mobile {
+      display: none;
+      color: #fff;
   }
-`
+    
+  @media(max-width: 900px) {
+    .mobile {
+      display: initial;
+    }
 
-export const MenuHeader = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
+    > nav {
+       display: none;
+    }
+
+    h1{
+      font-size: 30px;
+    }
+  }
 `
 
 export const NavContainer = styled.nav`
@@ -48,6 +51,12 @@ export const NavContainer = styled.nav`
       }
     }
   }
+
+  @media (max-width: 450px){
+    ul{
+      flex-direction: column;
+    }
+  }
 `
 
 export const AncoraContato = styled.a`
@@ -64,4 +73,17 @@ export const AncoraContato = styled.a`
   color: #fff;
   cursor: pointer;
   text-decoration: none;
+
+  @media(max-width: 900px){
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+  }
+`
+
+export const TextAncora = styled.p`
+  @media (min-width: 450px){
+    font-size: 20px;
+    color: #fff;
+  }
 `

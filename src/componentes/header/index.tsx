@@ -1,11 +1,19 @@
-import { AncoraContato, HeaderContainer, MenuHeader, MenuHeaderContainer, NavContainer } from "./styles";
+import { 
+  AncoraContato, 
+  HeaderContainer, 
+  NavContainer, 
+  TextAncora 
+} from "./styles";
 import {FaWhatsapp} from 'react-icons/fa'
+import { RiMenu3Fill } from 'react-icons/ri'
 
-export function Header(){
+interface IHeaderProps {
+  setMenuIsVisible: any
+}
+
+export function Header({setMenuIsVisible}: IHeaderProps){
   return(
       <HeaderContainer>
-        {/* <MenuHeaderContainer> */}
-          {/* <MenuHeader> */}
             <h1 style={{color: '#fff'}}>Porti<span style={{color: 'red'}}>folio</span></h1>
             <NavContainer>
               <ul>
@@ -27,10 +35,10 @@ export function Header(){
               </ul>
             </NavContainer>
             <AncoraContato href="https://wa.me/5588996975008" target="_blank">
-              Contato <FaWhatsapp />
+              <TextAncora>Contato</TextAncora> 
+              <FaWhatsapp />
             </AncoraContato>
-          {/* </MenuHeader> */}
-        {/* </MenuHeaderContainer> */}
+            <RiMenu3Fill className="mobile" size={44} onClick={() => setMenuIsVisible(true)}/>
       </HeaderContainer>
   )
 }

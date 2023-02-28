@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+interface IContainerImageProps {
+  imagemProp: string
+}
+
 export const Container = styled.div`
   width: 990px;
   height: 240px;
@@ -8,6 +12,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  
+  @media (max-width: 450px){
+    max-width: 300px;
+  }
 `
 
 export const Content = styled.div`
@@ -30,4 +38,16 @@ export const ContainerLogo = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 50px;
+`
+
+export const ContainerImagem = styled.div<IContainerImageProps>`
+  @media (min-width: 450px){
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    right: 20px;
+    background-image: url(${(props) => props.imagemProp});
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `

@@ -82,7 +82,6 @@ interface ApiProps {
 export function Main(){
   const {colors} = useTheme()
   const [projects, setProjects] = useState<ApiProps[]>([])
-  const [openModal, setOpenModal] = useState(false)
   
   useEffect(() => {
     github.get('/repos')
@@ -98,28 +97,6 @@ export function Main(){
       delay: 100
     });
   }, [])
-
-  const downloadPdf = () => {
-    fetch(`${Curriculo}`).then(response => {
-      response.blob().then(blob => {
-          // Creating new object of PDF file
-          const fileURL = window.URL.createObjectURL(blob);
-          // Setting various property values
-          let alink = document.createElement('a');
-          alink.href = fileURL;
-          alink.download = 'Curriculo_Samuel_Silva.pdf';
-          alink.click();
-      })
-    })
-  }
-
-  const openModalSet = () => {
-    if(openModal){
-     setOpenModal(false) 
-    }else{
-     setOpenModal(true)
-    }
-  }
   
   return(
     <>
@@ -193,12 +170,6 @@ export function Main(){
           />
         </ContainerServicos>
       </SectionContainer>
- 
-     {/* <SectionDefault title="Sobre mim" id="sobre" background={'#171923'}>
-        <ContainerAbout data-aos="fade-right">
-          <Title size="30px" color="#ffff">Me chamo Samuel Silva, formando em Engenharia de Software na UFC, atualmente no ultimo período. Possuo 2 anos de experiências em desenvolvimento. Profissional comprometido com o trabalho, dinâmica, proativo e organizado. Gosto de desafios e estou em busca de novos aprendizados e oportunidades de me desenvolver. Experiência com desenvolvimento back end em C#, .NET. Experiência com desenvolvimento front end em React, TypeScript, JavaScript. Experiência com SQLSever e MySQL. Conhecimentos em desenvolvimento em Java, Spring boot. Possuo nível de Inglês básico</Title>
-        </ContainerAbout>
-      </SectionDefault> */}
 
       <SectionDefault title="Habilidades" id="habilidades"  background="#171923" borderColor={colors.red}>
         <Habilidades>

@@ -31,7 +31,7 @@ export function HomePage(){
       <Footer>
         <Title size="20px">Copyright &copy; Samuel Silva 2023</Title>
       </Footer>
-      <CardProjeto />
+      {/* <CardProjeto /> */}
     </Wrapper>
   )
 }

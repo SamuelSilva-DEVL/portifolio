@@ -20,6 +20,7 @@ export const HomeContainer = styled.div`
 
   @media (max-width: 450px) {
     flex-direction: column;
+    gap: 25px;
   }
 `
 export const Container = styled.div`
@@ -31,6 +32,11 @@ export const Container = styled.div`
   gap: 10px;
   
   img{
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 450px){
     width: 100%;
     height: 100%;
   }
@@ -54,6 +60,10 @@ export const Buttons = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 450px){
+    flex-direction: column;
+  }
 `
 
 export const RedesSociais = styled.div`
@@ -67,6 +77,7 @@ export const RedesSociais = styled.div`
 export const Icon = styled.a`
   color: ${(props) => props.theme.colors.red};
   font-size: 25px;
+  cursor: pointer;
 `
 
 export const Title = styled.p<TextProps>`
@@ -104,13 +115,13 @@ export const Footer = styled.footer`
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content:space-around ;
+  justify-content: space-around;
   background-color: ${(props) => props.theme.colors.gndiGray};
   color: #fff;
 `
 
 export const SectionContainer = styled.div`
-  width: 100%;
+  width: 100vw;
   min-height: 729px;
   padding: 50px 100px;
   display: flex;

@@ -18,7 +18,7 @@ export function CardServicos({logo, title, subTitle, imagem}: ICardServicosProps
         <h1 style={{fontSize: '30px'}}>{title}</h1>
         <h3 style={{fontSize: '16px'}}>{subTitle}</h3>
       </Content>
-      {/* <img src={imagem} alt="Imagem Serviço" /> */}
+
       <ContainerImagem imagemProp={imagem}/>
     </Container>
   )

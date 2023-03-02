@@ -1,4 +1,4 @@
-import { Container, Dados } from "./styles";
+import { Container, Dados, Text } from "./styles";
 
 interface CardProjectProps {
   title: string,
@@ -10,9 +10,9 @@ export function CardProject({title, url, descricao}: CardProjectProps){
   return(
     <Container>
       <Dados>
-        <p>Nome: {title}</p>
-        {descricao && <p>Descrição: {descricao}</p>} 
-        <p>URL: {url}</p>
+        <Text>Nome: {title}</Text>
+        {descricao && <Text>Descrição: {descricao}</Text>} 
+        <Text>URL: {url}</Text>
       </Dados>
     </Container>
   )

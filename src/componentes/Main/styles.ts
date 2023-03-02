@@ -9,6 +9,10 @@ interface ImageProps {
   image?: string
 }
 
+interface ISectionContainerProps{
+  backgroundTipe: string
+}
+
 export const HomeContainer = styled.div`
   width: 100%;
   min-height: 729px;
@@ -90,6 +94,7 @@ export const Habilidades = styled.div`
   min-width: 250px;
 
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
 `
@@ -120,16 +125,18 @@ export const Footer = styled.footer`
   color: #fff;
 `
 
-export const SectionContainer = styled.div`
+export const SectionContainer = styled.div<ISectionContainerProps>`
   width: 100vw;
   min-height: 729px;
-  padding: 50px 100px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 150px;
-  background-color: #0E0E0E;
+  gap: 100px;
   border-radius: 60px;
+  background-color: ${(props) => props.backgroundTipe == "primary" 
+                                  ? "#0E0E0E" 
+                                  : "#171923"};
 `
 
 export const ContainerServicos = styled.div`

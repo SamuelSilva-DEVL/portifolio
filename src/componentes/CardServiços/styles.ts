@@ -13,9 +13,15 @@ export const Container = styled.div`
   align-items: center;
   position: relative;
   
-  @media (max-width: 450px){
-    max-width: 300px;
+  @media (max-width: 850px){
+    width: 100%;
+    height: 300px;
   }
+
+  /* @media (max-width: 450px){
+    max-width: 300px;
+    height: 300px;
+  } */
 `
 
 export const Content = styled.div`

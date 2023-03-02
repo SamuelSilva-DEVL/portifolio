@@ -19,6 +19,10 @@ export const Section = styled.div<SectionProps>`
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+  @media (max-width: 450px){
+    width: 130px;
+    height: 130px;
+  }
   /* img{
     width: 80px;
     height: 80px;

@@ -153,7 +153,7 @@ export function Main(){
         </Container>  
       </HomeContainer>
 
-      <SectionContainer id="servicos">
+      <SectionContainer id="servicos" backgroundTipe="primary">
         <Title size="40px" color="rgb(182, 182, 182)" style={{fontWeight: 'bold'}}>Serviços</Title>
         <ContainerServicos data-aos="fade-left">
           <CardServicos   
@@ -171,7 +171,7 @@ export function Main(){
         </ContainerServicos>
       </SectionContainer>
 
-      <SectionDefault title="Habilidades" id="habilidades"  background="#171923" borderColor={colors.red}>
+      {/* <SectionDefault title="Habilidades" id="habilidades"  background="#171923" borderColor={colors.red}>
         <Habilidades>
           {habilidades.map((habilidade) => (
           <CardHabilidade
@@ -181,9 +181,22 @@ export function Main(){
           />
         ))}
         </Habilidades>
-      </SectionDefault>
+      </SectionDefault> */}
 
-      <SectionContainer id="projetos">
+      <SectionContainer backgroundTipe="secondary">
+        <Title size="40px" color="rgb(182, 182, 182)" style={{fontWeight: 'bold'}}>Habilidades</Title>
+        <Habilidades>
+          {habilidades.map((habilidade) => (
+          <CardHabilidade
+            key={habilidade.tittle}
+            title={habilidade.tittle}
+            image={habilidade.image}
+          />
+        ))}
+        </Habilidades>
+      </SectionContainer>
+
+      <SectionContainer id="projetos" backgroundTipe="primary">
       <Title size="40px" color="rgb(182, 182, 182)" style={{fontWeight: 'bold'}}>Projetos</Title>
         <ContainerProjetos>
             {projects?.map((project) => (

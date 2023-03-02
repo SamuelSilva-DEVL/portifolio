@@ -18,6 +18,8 @@ export const Container = styled.section<IContainerProps>`
   align-items: center;
   justify-content: center;
   color: #fff;
+  background: rgb(23,25,35);
+  background: linear-gradient(172deg, rgba(23,25,35,1) 0%, rgba(23,25,35,0.70) 100%);
 
   opacity: 0;
   pointer-events: none;

@@ -17,11 +17,6 @@ export const Container = styled.div`
     width: 100%;
     height: 300px;
   }
-
-  /* @media (max-width: 450px){
-    max-width: 300px;
-    height: 300px;
-  } */
 `
 
 export const Content = styled.div`
@@ -47,7 +42,7 @@ export const ContainerLogo = styled.div`
 `
 
 export const ContainerImagem = styled.div<IContainerImageProps>`
-  @media (min-width: 450px){
+  @media (min-width: 760px){
     width: 250px;
     height: 200px;
     position: absolute;

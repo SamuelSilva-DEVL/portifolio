@@ -6,7 +6,7 @@ import {AiOutlineCloudDownload,
   AiFillInstagram,
 }from 'react-icons/ai'
 import { useTheme } from "styled-components";
-import Curriculo from '../../assets/CV Samuel Silva.pdf'
+import Curriculo from '../../assets/Curriculo.pdf'
 import { BasicModal } from "../Modal";
 import { ImagemPerfilHome } from './ImagemPerfilHome';
 

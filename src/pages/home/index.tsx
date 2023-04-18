@@ -1,16 +1,15 @@
-import { Header } from "../../componentes/header";
-import { useTheme } from "styled-components";
-import { Footer, Title, Wrapper} 
-from "./styles";
-import {useEffect, useState} from 'react'
+import * as H from './styles'
 import AOS from 'aos'
+import {useEffect, useState} from 'react'
+import { Header } from "../../componentes/header";
 import 'aos/dist/aos.css'
 import { Main } from "../../componentes/Main";
-import { CardProjeto } from "../../componentes/CardProjeto";
 import { MenuMobile } from "../../componentes/MenuMobile";
+import { Servicos } from '../../componentes/Servicos';
+import { Habilidades } from '../../componentes/Habilidades';
+import { Projetos } from '../../componentes/Projetos';
 
 export function HomePage(){
-  const {colors} = useTheme()
   const [menuIsVisible, setMenuIsVisible] = useState(false)
 
   useEffect(() => {
@@ -21,17 +20,19 @@ export function HomePage(){
   }, [])
 
   return(
-    <Wrapper>
+    <H.Wrapper>
       <MenuMobile 
         menuIsVisible={menuIsVisible}
         setMenuIsVisible={setMenuIsVisible}
       />
       <Header setMenuIsVisible={setMenuIsVisible}/>
       <Main />
-      <Footer>
-        <Title size="20px">Copyright &copy; Samuel Silva 2023</Title>
-      </Footer>
-      {/* <CardProjeto /> */}
-    </Wrapper>
+      <Servicos />
+      <Habilidades />    
+      <Projetos />
+      <H.Footer>
+        <H.Title size="20px">Copyright &copy; Samuel Silva 2023</H.Title>
+      </H.Footer>
+    </H.Wrapper>
   )
 }

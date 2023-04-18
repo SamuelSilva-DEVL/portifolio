@@ -126,7 +126,7 @@ export const Footer = styled.footer`
 `
 
 export const SectionContainer = styled.div<ISectionContainerProps>`
-  width: 100vw;
+  width: 100%;
   min-height: 729px;
   padding: 50px;
   display: flex;
@@ -137,6 +137,8 @@ export const SectionContainer = styled.div<ISectionContainerProps>`
   background-color: ${(props) => props.backgroundTipe == "primary" 
                                   ? "#0E0E0E" 
                                   : "#171923"};
+  
+  overflow-y: hidden;
 `
 
 export const ContainerServicos = styled.div`
@@ -146,4 +148,26 @@ export const ContainerServicos = styled.div`
   align-items: center;
   justify-content: center;
   gap: 50px;
+`
+
+export const ButtonModal = styled.button`
+  width: 200px;
+  height: 48px;
+  border: 2px solid ${(props) => props.theme.colors.red};
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: ${(props) => props.theme.colors.red};
+  color: #ffff;
+  font-size: 16px;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  :hover{
+    background: 0;
+    border: 2px solid ${(props) => props.theme.colors.red};
+    transition: 0.5s;
+  }
 `

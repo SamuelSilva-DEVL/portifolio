@@ -1,9 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { ButtonAction } from '../Button';
+import { ButtonModal } from '../Main/styles'
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -24,7 +23,7 @@ export function BasicModal() {
 
   return (
     <div>
-      <ButtonAction title="Um pouco sobre mim" onClick={handleOpen} />
+      <ButtonModal onClick={handleOpen}>Um pouco sobre mim</ButtonModal>
       <Modal
         open={open}
         onClose={handleClose}
@@ -35,7 +34,7 @@ export function BasicModal() {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Olá :)
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{textAlign: "justify"}}>
           Me chamo Samuel Silva, formando em Engenharia de Software na UFC, atualmente no ultimo período. Possuo 2 anos de experiências em desenvolvimento. Profissional comprometido com o trabalho, dinâmico, proativo e organizado. Gosto de desafios e estou em busca de novos aprendizados e oportunidades de me desenvolver. Experiência com desenvolvimento back end em C#, .NET. Experiência com desenvolvimento front end em React, TypeScript, JavaScript. Experiência com SQLSever e MySQL. Conhecimentos em desenvolvimento em Java, Spring boot. Possuo nível de Inglês básico
           </Typography>
         </Box>

@@ -34,4 +34,8 @@ export const ContainerCarousel = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+
+  @media (max-width: 470px){
+    width: 100vw;
+  }
 `

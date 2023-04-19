@@ -19,6 +19,11 @@ export const Section = styled.div`
   @media (max-width: 450px){
     width: 130px;
     height: 130px;
+
+    img{
+      width: 60px;
+      height: 60px;
+    }
   }
 `
 

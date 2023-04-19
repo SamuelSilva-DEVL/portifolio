@@ -65,6 +65,14 @@ export const Buttons = styled.div`
   align-items: center;
   gap: 20px;
 
+  a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #fff;
+  }
+
   @media (max-width: 450px){
     flex-direction: column;
   }
@@ -89,30 +97,12 @@ export const Title = styled.p<TextProps>`
   color: ${(props) => props.color};
 `
 
-export const Habilidades = styled.div`
-  max-width: 100%;
-  min-width: 250px;
-
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-`
-
 export const ContainerAbout = styled.div`
   width: 90%;
   height: 400px;
   margin: 0 auto;
 
   text-align: center;
-`
-
-export const ContainerProjetos = styled.div`
-  width: 100%;
-  max-height: 500px;
-  overflow-y: scroll;
-  scrollbar-color: ${(props) => props.theme.colors.primary};
-  margin: 0 auto;
 `
 
 export const Footer = styled.footer`
@@ -139,15 +129,6 @@ export const SectionContainer = styled.div<ISectionContainerProps>`
                                   : "#171923"};
   
   overflow-y: hidden;
-`
-
-export const ContainerServicos = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
 `
 
 export const ButtonModal = styled.button`

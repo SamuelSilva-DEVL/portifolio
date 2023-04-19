@@ -20,18 +20,10 @@ export function Main(){
           <M.Title color='#ffff' size="20px">Bem vindo(a)</M.Title>
           <M.Title color="red" size="50px">Olá, eu sou Samuel Silva</M.Title>
           <M.Title color={colors.gndiGray} size='24px'>Desenvolvedor Web</M.Title>
+          
           <M.Buttons>
             <BasicModal />
-            <a 
-              download href={Curriculo} 
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '5px',
-                textDecoration: 'none',
-                color: '#fff'
-              }}
-            >Baixar CV<AiOutlineCloudDownload/></a>
+            <a download href={Curriculo}>Baixar CV<AiOutlineCloudDownload/></a>
           </M.Buttons>
 
           <M.RedesSociais>

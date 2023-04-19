@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 350px;
   height: 500px;
-  margin: 100px;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -19,6 +18,10 @@ export const Container = styled.div`
   p{
     margin-top: 20px;
     margin-left: 5px;
+  }
+
+  @media (max-width: 800px){
+    margin: 20px;
   }
 `
 

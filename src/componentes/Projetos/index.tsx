@@ -1,4 +1,5 @@
 import * as P from './styles'
+import './carouselStyles.css'
 import Carousel from '@itseasy21/react-elastic-carousel'
 import { CardProjeto } from './CardProjeto'
 import ImagemProjetoPortifolio from '../../assets/imgsProjetos/projetoPortifolio.png' 

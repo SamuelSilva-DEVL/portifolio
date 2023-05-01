@@ -1,7 +1,6 @@
 import * as H from './styles'
 import {FaWhatsapp} from 'react-icons/fa'
 import { RiMenu3Fill } from 'react-icons/ri'
-import '../Main/ImagemPerfilHome/styleImage.css'
 
 interface IHeaderProps {
   setMenuIsVisible: any

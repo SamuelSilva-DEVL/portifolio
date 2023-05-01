@@ -16,7 +16,7 @@ import { Projetos } from '../Projetos';
 import { MenuMobile } from '../MenuMobile';
 import { Header } from '../Header';
 import { useState } from 'react';
-import { Experiencias } from '../Experiencias';
+// import { Experiencias } from '../Experiencias';
 
 export function Main(){
   const {colors} = useTheme()
@@ -79,7 +79,7 @@ export function Main(){
       <Servicos />
       <Habilidades />    
       <Projetos />
-      <Experiencias />
+      {/* <Experiencias /> */}
     </>
   )
 }

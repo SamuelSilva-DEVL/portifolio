@@ -70,7 +70,6 @@ export const NavContainer = styled.nav`
 export const AncoraContato = styled.a`
   width: 200px;
   height: 48px;
-  position: relative;
   background-color: 0;
   border: 3px solid #fff;
   border-radius: 5px;
@@ -82,30 +81,6 @@ export const AncoraContato = styled.a`
   color: #fff;
   cursor: pointer;
   text-decoration: none;
-  transition: color 1s;
-  overflow: hidden;
-
-  :hover{
-    background-color: #090909;
-  }
-
-  :before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50px;
-    z-index: -1;
-    width: 150%;
-    height: 100%;
-    background-color: red;
-    transform: scaleX(0) skewX(35deg);
-    transform-origin: left;
-    transition: transform 1s;
-  }
-
-  :hover::before{
-    transform: scaleX(1) skewX(35deg);
-  }
 
   @media(max-width: 900px){
     width: 150px;

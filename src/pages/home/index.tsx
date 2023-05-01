@@ -1,7 +1,7 @@
 import * as H from './styles'
 import AOS from 'aos'
 import {useEffect, useState} from 'react'
-import { Header } from "../../componentes/header";
+import { Header } from "../../componentes/Header";
 import 'aos/dist/aos.css'
 import { Main } from "../../componentes/Main";
 import { MenuMobile } from "../../componentes/MenuMobile";
@@ -21,15 +21,15 @@ export function HomePage(){
 
   return(
     <H.Wrapper>
-      <MenuMobile 
+      {/* <MenuMobile 
         menuIsVisible={menuIsVisible}
         setMenuIsVisible={setMenuIsVisible}
       />
-      <Header setMenuIsVisible={setMenuIsVisible}/>
+      <Header setMenuIsVisible={setMenuIsVisible}/> */}
       <Main />
-      <Servicos />
+      {/* <Servicos />
       <Habilidades />    
-      <Projetos />
+      <Projetos /> */}
       <H.Footer>
         <H.Title size="20px">Copyright &copy; Samuel Silva 2023</H.Title>
       </H.Footer>

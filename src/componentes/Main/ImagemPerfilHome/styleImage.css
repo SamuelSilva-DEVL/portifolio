@@ -12,6 +12,12 @@
   }
 }
 
+@media (max-width: 840px) {
+  .containerImagemPerfil {
+    display: none;
+  }
+}
+
 .home__img {
   order: 1;
   justify-self: center;

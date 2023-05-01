@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Container, ContainerImagem, ContainerLogo, Content } from "./styles";
+import { ReactNode } from "react"; 
+import * as C from './styles'
 
 interface ICardServicosProps {
   logo?: ReactNode,
@@ -10,16 +10,16 @@ interface ICardServicosProps {
 
 export function CardServicos({logo, title, subTitle, imagem}: ICardServicosProps){
   return(
-    <Container>
-      <Content>
-        <ContainerLogo>
+    <C.Container>
+      <C.Content>
+        <C.ContainerLogo>
           {logo}
-        </ContainerLogo>
-        <h1 style={{fontSize: '30px'}}>{title}</h1>
-        <h3 style={{fontSize: '16px'}}>{subTitle}</h3>
-      </Content>
+        </C.ContainerLogo>
+        <h1>{title}</h1>
+        <h3>{subTitle}</h3>
+      </C.Content>
 
-      <ContainerImagem imagemProp={imagem}/>
-    </Container>
+      <C.ContainerImagem imagemProp={imagem}/>
+    </C.Container>
   )
 }

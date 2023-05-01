@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 350px;
   height: 500px;
+  margin: 20px;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -21,7 +22,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 800px){
-    margin: 20px;
+    margin: 3px;
   }
 `
 

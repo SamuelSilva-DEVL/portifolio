@@ -7,8 +7,8 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <HomePage />
-      
-      <GlobalStyle/>
+
+      <GlobalStyle />
     </ThemeProvider>
   )
 }

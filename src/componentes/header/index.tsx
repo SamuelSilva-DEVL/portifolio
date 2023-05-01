@@ -1,11 +1,7 @@
-import { 
-  AncoraContato, 
-  HeaderContainer, 
-  NavContainer, 
-  TextAncora 
-} from "./styles";
+import * as H from './styles'
 import {FaWhatsapp} from 'react-icons/fa'
 import { RiMenu3Fill } from 'react-icons/ri'
+import '../Main/ImagemPerfilHome/styleImage.css'
 
 interface IHeaderProps {
   setMenuIsVisible: any
@@ -13,9 +9,9 @@ interface IHeaderProps {
 
 export function Header({setMenuIsVisible}: IHeaderProps){
   return(
-      <HeaderContainer>
-            <h1 style={{color: '#fff'}}>Porti<span style={{color: 'red'}}>folio</span></h1>
-            <NavContainer>
+      <H.HeaderContainer>
+            <h1>Porti<span>folio</span></h1>
+            <H.NavContainer>
               <ul>
                 <li>
                   <a href="#servicos">
@@ -33,12 +29,12 @@ export function Header({setMenuIsVisible}: IHeaderProps){
                   </a>
                 </li>
               </ul>
-            </NavContainer>
-            <AncoraContato href="https://wa.me/5588996975008" target="_blank">
-              <TextAncora>Contato</TextAncora> 
+            </H.NavContainer>
+            <H.AncoraContato href="https://wa.me/5588996975008" target="_blank">
+              <H.TextAncora>Contato</H.TextAncora> 
               <FaWhatsapp />
-            </AncoraContato>
+            </H.AncoraContato>
             <RiMenu3Fill className="mobile" size={44} onClick={() => setMenuIsVisible(true)}/>
-      </HeaderContainer>
+      </H.HeaderContainer>
   )
 }

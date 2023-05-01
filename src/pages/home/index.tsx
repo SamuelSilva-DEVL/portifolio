@@ -1,10 +1,10 @@
 import * as H from './styles'
 import AOS from 'aos'
 import {useEffect, useState} from 'react'
-import { Header } from "../../componentes/Header";
+// import { Header } from "../../componentes/Header";
 import 'aos/dist/aos.css'
 import { Main } from "../../componentes/Main";
-import { MenuMobile } from "../../componentes/MenuMobile";
+// import { MenuMobile } from "../../componentes/MenuMobile";
 import { Servicos } from '../../componentes/Servicos';
 import { Habilidades } from '../../componentes/Habilidades';
 import { Projetos } from '../../componentes/Projetos';

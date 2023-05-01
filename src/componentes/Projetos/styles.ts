@@ -36,6 +36,19 @@ export const ContainerCarousel = styled.div`
   display: flex;
 
   @media (max-width: 470px){
-    width: 100vw;
+    width: 100%;
+  }
+
+  .rec.rec-arrow:hover{
+    background-color: red;
+  }
+
+  .rec.rec-dot:hover{
+    box-shadow: #cc3333 0px 0px 1px 3px;
+  }
+
+  .rec.rec-dot.rec-dot_active{
+    background-color: red;
+    box-shadow: #cc3333 0px 0px 1px 3px;
   }
 `

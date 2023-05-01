@@ -14,8 +14,8 @@ import { Servicos } from '../Servicos';
 import { Habilidades } from '../Habilidades';
 import { Projetos } from '../Projetos';
 import { MenuMobile } from '../MenuMobile';
+import { Header } from '../header';
 import { useState } from 'react';
-import { Header } from '../Header';
 // import { Experiencias } from '../Experiencias';
 
 export function Main(){

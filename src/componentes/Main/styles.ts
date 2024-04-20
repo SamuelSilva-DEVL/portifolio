@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 interface TextProps {
   color?: string
@@ -9,7 +9,7 @@ interface ImageProps {
   image?: string
 }
 
-interface ISectionContainerProps{
+interface ISectionContainerProps {
   backgroundTipe: string
 }
 
@@ -34,13 +34,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
-  
-  img{
+
+  img {
     width: 100%;
     height: 100%;
   }
 
-  @media (max-width: 450px){
+  @media (max-width: 450px) {
     width: 100%;
     height: 100%;
   }
@@ -49,9 +49,9 @@ export const ContainerImage = styled.div<ImageProps>`
   width: 500px;
   height: 600px;
   clip-path: circle(50% at 50% 50%);
-  background-image: url(${(props) => props.image});
+  background-image: url(${props => props.image});
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
 `
 export const ImagemProfile = styled.img`
   width: 350px;
@@ -65,15 +65,22 @@ export const Buttons = styled.div`
   align-items: center;
   gap: 20px;
 
-  a{
+  a {
     display: flex;
     align-items: center;
     gap: 5px;
     text-decoration: none;
     color: #fff;
+    padding: 1.03rem 2rem;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: #60605e;
+    }
   }
 
-  @media (max-width: 450px){
+  @media (max-width: 450px) {
     flex-direction: column;
   }
 `
@@ -87,14 +94,14 @@ export const RedesSociais = styled.div`
 `
 
 export const Icon = styled.a`
-  color: ${(props) => props.theme.colors.red};
+  color: ${props => props.theme.colors.red};
   font-size: 25px;
   cursor: pointer;
 `
 
 export const Title = styled.p<TextProps>`
-  font-size: ${(props) => props.size};
-  color: ${(props) => props.color};
+  font-size: ${props => props.size};
+  color: ${props => props.color};
 `
 
 export const ContainerAbout = styled.div`
@@ -111,7 +118,7 @@ export const Footer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: ${(props) => props.theme.colors.gndiGray};
+  background-color: ${props => props.theme.colors.gndiGray};
   color: #fff;
 `
 
@@ -124,20 +131,19 @@ export const SectionContainer = styled.div<ISectionContainerProps>`
   align-items: center;
   gap: 100px;
   border-radius: 60px;
-  background-color: ${(props) => props.backgroundTipe == "primary" 
-                                  ? "#0E0E0E" 
-                                  : "#171923"};
-  
+  background-color: ${props =>
+    props.backgroundTipe == 'primary' ? '#0E0E0E' : '#171923'};
+
   overflow-y: hidden;
 `
 
 export const ButtonModal = styled.button`
   width: 200px;
   height: 48px;
-  border: 2px solid ${(props) => props.theme.colors.red};
+  border: 2px solid ${props => props.theme.colors.red};
   cursor: pointer;
   border-radius: 5px;
-  background-color: ${(props) => props.theme.colors.red};
+  background-color: ${props => props.theme.colors.red};
   color: #ffff;
   font-size: 16px;
   transition: 0.5s;
@@ -146,9 +152,9 @@ export const ButtonModal = styled.button`
   justify-content: center;
   gap: 5px;
 
-  :hover{
+  :hover {
     background: 0;
-    border: 2px solid ${(props) => props.theme.colors.red};
+    border: 2px solid ${props => props.theme.colors.red};
     transition: 0.5s;
   }
 `

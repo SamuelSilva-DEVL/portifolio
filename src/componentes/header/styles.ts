@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -10,29 +10,29 @@ export const HeaderContainer = styled.header`
   position: absolute;
   top: 0;
 
-  h1{
+  h1 {
     color: #fff;
   }
 
-  span{
+  span {
     color: red;
   }
 
   .mobile {
-      display: none;
-      color: #fff;
+    display: none;
+    color: #fff;
   }
-    
-  @media(max-width: 900px) {
+
+  @media (max-width: 900px) {
     .mobile {
       display: initial;
     }
 
     > nav {
-       display: none;
+      display: none;
     }
 
-    h1{
+    h1 {
       font-size: 30px;
     }
   }
@@ -45,53 +45,63 @@ export const NavContainer = styled.nav`
     display: flex;
     list-style-type: none;
     justify-content: space-around;
-
-    a {
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      font-size: 20px;
-
-      &:hover {
-        color: ${(props) => props.theme.colors.red};
-        border-bottom: 1px solid white;
-      }
-    }
   }
 
-  @media (max-width: 450px){
-    ul{
+  .link-nav {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    transition: 0.3s ease-in-out;
+  }
+
+  .link-nav:hover {
+    color: #ff0000;
+  }
+
+  .link-nav::after {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .link-nav:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 450px) {
+    ul {
       flex-direction: column;
     }
   }
 `
 
 export const AncoraContato = styled.a`
-  width: 200px;
-  height: 48px;
-  background-color: 0;
-  border: 3px solid #fff;
-  border-radius: 5px;
-  font-size: 20px;
+  text-decoration: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
-  color: #fff;
+  gap: 10px;
+  border: 1px solid #ffffff;
+  padding: 0.6em 2.3em;
+  border-radius: 8px;
   cursor: pointer;
-  text-decoration: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-image: linear-gradient(45deg, transparent 50%, #ff0000 50%);
+  background-position: 25%;
+  background-size: 400%;
+  -webkit-transition: background 500ms ease-in-out, color 500ms ease-in-out;
+  transition: background 500ms ease-in-out, color 500ms ease-in-out;
 
-  @media(max-width: 900px){
-    width: 150px;
-    height: 40px;
-    font-size: 18px;
-  }
-`
-
-export const TextAncora = styled.p`
-  @media (min-width: 450px){
-    font-size: 20px;
-    color: #fff;
+  &:hover {
+    color: #ffffff;
+    background-position: 100%;
   }
 `

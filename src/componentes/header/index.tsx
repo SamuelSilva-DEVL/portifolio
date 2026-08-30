@@ -1,8 +1,9 @@
 import { FaWhatsapp } from 'react-icons/fa'
 import { RiMenu3Fill } from 'react-icons/ri'
+import type { Dispatch, SetStateAction } from 'react'
 
 interface IHeaderProps {
-  setMenuIsVisible: any
+  setMenuIsVisible: Dispatch<SetStateAction<boolean>>
 }
 
 export function Header({ setMenuIsVisible }: IHeaderProps) {

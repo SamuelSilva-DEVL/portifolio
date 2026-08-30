@@ -1,49 +1,53 @@
 'use client'
 
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTitle,
+} from '@/components/ui/drawer'
 import { IoClose } from 'react-icons/io5'
-import { useEffect } from 'react'
+import type { Dispatch, SetStateAction } from 'react'
 
 interface IMenuMobileProps {
   menuIsVisible: boolean
-  setMenuIsVisible: any
+  setMenuIsVisible: Dispatch<SetStateAction<boolean>>
 }
 
 export function MenuMobile({ menuIsVisible, setMenuIsVisible }: IMenuMobileProps) {
-  useEffect(() => {
-    document.body.style.overflowY = menuIsVisible ? 'hidden' : 'auto'
-  }, [menuIsVisible])
-
   return (
-    <section
-      className={`absolute inset-0 z-[5] flex items-center justify-center text-white transition-transform duration-500 [backdrop-filter:blur(3px)] [background:linear-gradient(172deg,rgba(23,25,35,1)_0%,rgba(23,25,35,0.70)_100%)] ${
-        menuIsVisible
-          ? 'pointer-events-auto translate-y-0 opacity-100'
-          : 'pointer-events-none translate-y-[50px] opacity-0'
-      }`}
-    >
-      <IoClose
-        className={`absolute right-4 top-4 transition-transform duration-700 ${
-          menuIsVisible ? 'rotate-0' : 'rotate-45'
-        }`}
-        size={44}
-        onClick={() => setMenuIsVisible()}
-      />
+    <Drawer direction="right" open={menuIsVisible} onOpenChange={setMenuIsVisible}>
+      <DrawerContent className="border-l border-white/10 bg-[#171923] text-white [&_[data-slot=drawer-title]]:text-white">
+        <DrawerTitle className="sr-only">Menu</DrawerTitle>
 
-      <nav
-        className={`flex flex-col items-center justify-center gap-8 transition-transform duration-700 ${
-          menuIsVisible ? 'scale-100' : 'scale-[0.7]'
-        }`}
-      >
-        <a className="cursor-pointer text-[25px] text-white no-underline" href="#servicos" onClick={() => setMenuIsVisible()}>
-          Serviços
-        </a>
-        <a className="cursor-pointer text-[25px] text-white no-underline" href="#habilidades" onClick={() => setMenuIsVisible()}>
-          Habilidades
-        </a>
-        <a className="cursor-pointer text-[25px] text-white no-underline" href="#projetos" onClick={() => setMenuIsVisible()}>
-          Projetos
-        </a>
-      </nav>
-    </section>
+        <DrawerClose asChild>
+          <IoClose className="absolute right-4 top-4 cursor-pointer" size={36} />
+        </DrawerClose>
+
+        <nav className="flex flex-1 flex-col items-center justify-center gap-8">
+          <a
+            className="cursor-pointer text-[25px] text-white no-underline"
+            href="#servicos"
+            onClick={() => setMenuIsVisible(false)}
+          >
+            Serviços
+          </a>
+          <a
+            className="cursor-pointer text-[25px] text-white no-underline"
+            href="#habilidades"
+            onClick={() => setMenuIsVisible(false)}
+          >
+            Habilidades
+          </a>
+          <a
+            className="cursor-pointer text-[25px] text-white no-underline"
+            href="#projetos"
+            onClick={() => setMenuIsVisible(false)}
+          >
+            Projetos
+          </a>
+        </nav>
+      </DrawerContent>
+    </Drawer>
   )
 }

@@ -1,85 +1,92 @@
-import * as M from './styles'
-import 'aos/dist/aos.css'
-import {AiOutlineCloudDownload, 
-  AiFillGithub,
-  AiFillLinkedin, 
-  AiFillInstagram,
-  AiOutlineArrowUp
-}from 'react-icons/ai'
-import { useTheme } from "styled-components";
-import Curriculo from '../../assets/Curriculo.pdf'
-import { BasicModal } from "../Modal";
-import { ImagemPerfilHome } from './ImagemPerfilHome';
-import { Servicos } from '../Servicos';
-import { Habilidades } from '../Habilidades';
-import { Projetos } from '../Projetos';
-import { MenuMobile } from '../MenuMobile';
-import { Header } from '../header';
-import { useState } from 'react';
-// import { Experiencias } from '../Experiencias';
+'use client'
 
-export function Main(){
-  const {colors} = useTheme()
+import { useState } from 'react'
+import {
+  AiOutlineCloudDownload,
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillInstagram,
+  AiOutlineArrowUp,
+} from 'react-icons/ai'
+import { BasicModal } from '../Modal'
+import { ImagemPerfilHome } from './ImagemPerfilHome'
+import { Servicos } from '../Servicos'
+import { Habilidades } from '../Habilidades'
+import { Projetos } from '../Projetos'
+import { MenuMobile } from '../MenuMobile'
+import { Header } from '../header'
+
+export function Main() {
   const [menuIsVisible, setMenuIsVisible] = useState(false)
 
-  return(
+  return (
     <>
-    <a style={{
-                  position: 'fixed',
-                  color: "white",
-                  bottom: '10px',
-                  right: '10px',
-                  backgroundColor: 'red',
-                  height: '60px',
-                  width: '60px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '35px',
-                  zIndex: '1'
-                }} 
-      href='#/'>
-         <AiOutlineArrowUp />
-     </a>
-    <M.HomeContainer id="/">
-        <MenuMobile 
-          menuIsVisible={menuIsVisible}
-          setMenuIsVisible={setMenuIsVisible}
-        />
-        <Header setMenuIsVisible={setMenuIsVisible}/>
-        <M.Container data-aos="fade-right">
-          <M.Title color='#ffff' size="20px">Bem vindo(a)</M.Title>
-          <M.Title color="red" size="50px">Olá, eu sou Samuel Silva</M.Title>
-          <M.Title color={colors.gndiGray} size='24px'>Desenvolvedor Web</M.Title>
-          
-          <M.Buttons>
+      <a
+        href="#/"
+        className="fixed bottom-[10px] right-[10px] z-[1] flex h-[60px] w-[60px] items-center justify-center rounded-full bg-red text-[35px] text-white"
+      >
+        <AiOutlineArrowUp />
+      </a>
+
+      <section
+        id="/"
+        className="flex min-h-[729px] w-full items-center justify-around bg-[#171923] px-[100px] py-[50px] max-[450px]:flex-col max-[450px]:gap-[25px]"
+      >
+        <MenuMobile menuIsVisible={menuIsVisible} setMenuIsVisible={setMenuIsVisible} />
+        <Header setMenuIsVisible={setMenuIsVisible} />
+
+        <div
+          data-aos="fade-right"
+          className="flex h-[600px] w-[500px] flex-col justify-center gap-[10px] [&_img]:h-full [&_img]:w-full max-[450px]:h-full max-[450px]:w-full"
+        >
+          <p className="text-[20px] text-white">Bem vindo(a)</p>
+          <p className="text-[50px] text-red">Olá, eu sou Samuel Silva</p>
+          <p className="text-[24px] text-gndiGray">Desenvolvedor Web</p>
+
+          <div className="flex w-full items-center gap-5 max-[450px]:flex-col [&_a]:flex [&_a]:items-center [&_a]:gap-[5px] [&_a]:text-white [&_a]:no-underline">
             <BasicModal />
-            <a download href={Curriculo}>Baixar CV<AiOutlineCloudDownload/></a>
-          </M.Buttons>
+            <a download href="/Curriculo.pdf">
+              Baixar CV
+              <AiOutlineCloudDownload />
+            </a>
+          </div>
 
-          <M.RedesSociais>
-            <M.Icon href="https://www.linkedin.com/in/samuel-silva-9449ab211/" target="_blank">
+          <div className="flex w-full items-center gap-[10px] text-white">
+            <a
+              className="cursor-pointer text-[25px] text-red"
+              href="https://www.linkedin.com/in/samuel-silva-9449ab211/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <AiFillLinkedin />
-            </M.Icon>
+            </a>
 
-            <M.Icon href="https://github.com/SamuelSilva-DEVL" target="_blank">
-               <AiFillGithub />
-            </M.Icon>
+            <a
+              className="cursor-pointer text-[25px] text-red"
+              href="https://github.com/SamuelSilva-DEVL"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGithub />
+            </a>
 
-            <M.Icon href="https://instagram.com/samuel_silva79" target="_blank">
-               <AiFillInstagram />
-            </M.Icon>
-          </M.RedesSociais>
-        </M.Container>
+            <a
+              className="cursor-pointer text-[25px] text-red"
+              href="https://instagram.com/samuel_silva79"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillInstagram />
+            </a>
+          </div>
+        </div>
 
         <ImagemPerfilHome />
-      </M.HomeContainer>
+      </section>
 
       <Servicos />
-      <Habilidades />    
+      <Habilidades />
       <Projetos />
-      {/* <Experiencias /> */}
     </>
   )
 }

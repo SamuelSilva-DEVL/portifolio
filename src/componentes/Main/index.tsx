@@ -15,6 +15,7 @@ import { Habilidades } from '../Habilidades'
 import { Projetos } from '../Projetos'
 import { MenuMobile } from '../MenuMobile'
 import { Header } from '../header'
+import { Button } from '@/components/ui/button'
 
 export function Main() {
   const [menuIsVisible, setMenuIsVisible] = useState(false)
@@ -43,12 +44,14 @@ export function Main() {
           <p className="text-[50px] text-red">Olá, eu sou Samuel Silva</p>
           <p className="text-[24px] text-gndiGray">Desenvolvedor Web</p>
 
-          <div className="flex w-full items-center gap-5 max-[450px]:flex-col [&_a]:flex [&_a]:items-center [&_a]:gap-[5px] [&_a]:text-white [&_a]:no-underline">
+          <div className="flex w-full items-center gap-5 max-[450px]:flex-col">
             <BasicModal />
-            <a download href="/Curriculo.pdf">
-              Baixar CV
-              <AiOutlineCloudDownload />
-            </a>
+            <Button asChild variant="link" className="h-12 px-0 text-base">
+              <a download href="/Curriculo.pdf">
+                Baixar CV
+                <AiOutlineCloudDownload />
+              </a>
+            </Button>
           </div>
 
           <div className="flex w-full items-center gap-[10px] text-white">

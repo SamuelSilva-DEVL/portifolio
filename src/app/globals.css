@@ -1,0 +1,46 @@
+@import 'aos/dist/aos.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :root {
+    --background: #171923;
+    --foreground: #ffffff;
+    --card: #0e0e0e;
+    --card-foreground: #ffffff;
+    --popover: #0e0e0e;
+    --popover-foreground: #ffffff;
+    --primary: #ff0000;
+    --primary-foreground: #ffffff;
+    --secondary: #ef5b22;
+    --secondary-foreground: #ffffff;
+    --muted: #58585a;
+    --muted-foreground: #c0c0c0;
+    --accent: #ff0000;
+    --accent-foreground: #ffffff;
+    --destructive: #f14300;
+    --destructive-foreground: #ffffff;
+    --border: #58585a;
+    --input: #58585a;
+    --ring: #ff0000;
+    --radius: 0.625rem;
+  }
+}
